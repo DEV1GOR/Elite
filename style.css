@@ -812,38 +812,161 @@ h2 span {
 }
 
 /* ================================================================
-[14. RESPONSIVIDADE MOBILE]
+[14. RESPONSIVIDADE AVANÇADA] - Celulares e Tablets
 ================================================================
 */
-@media (max-width: 768px) {
+
+/* --- Ajustes para Tablets (max-width: 1024px) --- */
+@media (max-width: 1024px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+  }
+  .container {
+    padding: 0 30px;
+  }
+
+  .method-grid,
+  .pricing-grid {
+    gap: 20px;
+  }
+}
+
+/* --- Ajustes para Celulares (max-width: 768px) --- */
+@media (max-width: 768px) {
+  /* Tipografia Adaptativa */
+  h1 {
+    font-size: 2.2rem;
+    padding: 0 10px;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  /* Header e Navegação */
+  nav {
+    flex-direction: column;
+    gap: 20px;
   }
   .nav-links {
-    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+  .btn-top {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Hero e CTA */
+  .hero {
+    padding: 60px 0;
   }
   .cta-group {
     flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 40px;
   }
-  .logo-img {
-    max-height: 45px;
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
   }
 
-  /* Timeline mobile */
+  /* Grids - Forçando 1 coluna onde necessário */
+  .problems-grid,
+  .method-grid,
+  .results-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-grid-hero {
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-item-hero {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* Timeline Mobile (Linha para a esquerda) */
+  .timeline::before {
+    content: none;
+  } /* Remove linha antiga se houver */
   .timeline-line {
-    left: 15px;
+    left: 20px;
     transform: none;
   }
   .timeline-dot {
-    left: 15px !important;
+    left: 20px !important;
   }
-  .timeline-item,
-  .timeline-item.right {
-    width: 100%;
-    margin-left: 0;
-    padding-left: 40px;
-    justify-content: flex-start;
+  .timeline-item {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 50px !important;
+    padding-right: 0 !important;
+    justify-content: flex-start !important;
   }
+
+  /* Tabelas - Scroll horizontal para não quebrar o layout */
+  .comparison-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .comparison-table {
+    min-width: 600px;
+  } /* Garante que a tabela seja legível */
+
+  /* FAQ e Formulário */
+  .contact-form-wrapper {
+    padding: 25px 20px;
+  }
+  .faq-question {
+    font-size: 0.95rem;
+    padding: 15px;
+  }
+
+  /* WhatsApp Float menor no mobile */
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* --- Ajustes para Celulares Pequenos (max-width: 480px) --- */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .section-badge {
+    font-size: 0.65rem;
+  }
+  .pricing-card {
+    padding: 25px;
+  }
+  .mini-features-row {
+    gap: 10px;
+  }
+  .mini-feature {
+    font-size: 0.75rem;
+    padding: 8px 15px;
+  }
+}
+
+/* Fix para imagens não vazarem do container */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* [FAQ STYLES] - Consistência visual com os cards anteriores */

@@ -106,7 +106,7 @@ document.getElementById("lead-form").addEventListener("submit", function (e) {
   const objetivo = document.getElementById("objetivo").value;
 
   // Seu número de telefone (com DDD e sem espaços/traços)
-  const meuNumero = "5581973122626";
+  const meuNumero = "5581991396632";
 
   // Constrói a mensagem personalizada
   const mensagem =
